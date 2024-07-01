@@ -1,6 +1,6 @@
 # Restaurant Reservation API
 
-This project is a RESTful API for managing restaurant reservations. The API allows clients to create users, make reservations, and fetch a list of existing reservations given a date range. Users must be unique by their email address and must be associated with reservations(you can find apis in the file openapi.yaml)
+This project is a RESTful API for managing restaurant reservations. The API allows clients to create users, make reservations, and fetch a list of existing reservations given a date range. Users must be unique by their email address and must be associated with reservations(you can find all api in the file openapi.yaml)
 
 ## Requirements
 
