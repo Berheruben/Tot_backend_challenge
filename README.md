@@ -1,6 +1,6 @@
 # Restaurant Reservation API
 
-This project is a RESTful API for managing restaurant reservations. The API allows clients to create users, make reservations, and fetch a list of existing reservations given a date range. Users must be unique by their email address and must be associated with reservations.
+This project is a RESTful API for managing restaurant reservations. The API allows clients to create users, make reservations, and fetch a list of existing reservations given a date range. Users must be unique by their email address and must be associated with reservations(you can find apis in the file openapi.yaml)
 
 ## Requirements
 
@@ -16,8 +16,8 @@ This project is a RESTful API for managing restaurant reservations. The API allo
 First, clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/your-username/restaurant-reservation-api.git
-cd restaurant-reservation-api
+git clone https://github.com/Berheruben/Tot_backend_challenge.git
+cd Tot_backend_challenge
 ```
 
 ### 2. Install Dependencies
