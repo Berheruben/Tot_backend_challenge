@@ -15,8 +15,8 @@ export const createReservation = async (req: Request, res: Response) => {
     }
 
     const { email, date } = req.body;
-    const reservationRepository = AppDataSource.getRepository(Reservation);
-    const userRepository = AppDataSource.getRepository(User);
+    const reservationRepository: Repository<Reservation> = AppDataSource.getRepository(Reservation);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     try {
         const user = await userRepository.findOneBy({ email });
@@ -62,7 +62,7 @@ export const getReservations = async (req: Request, res: Response) => {
         return res.status(400).json({ message: "'startDate' must be before 'endDate'" });
     }
 
-    const reservationRepository = AppDataSource.getRepository(Reservation);
+    const reservationRepository: Repository<Reservation> = AppDataSource.getRepository(Reservation);
 
     try {
         const [result, total] = await reservationRepository.findAndCount({

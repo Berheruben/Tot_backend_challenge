@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { AppDataSource } from '../dataSource';
 import { User } from '../entities/User';
 import { validationResult } from 'express-validator';
+import { Repository } from 'typeorm';
 
 export const createUser = async (req: Request, res: Response) => {
     const errors = validationResult(req);
@@ -10,7 +11,7 @@ export const createUser = async (req: Request, res: Response) => {
     }
 
     const { name, email } = req.body;
-    const userRepository = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     try {
         const existingUser = await userRepository.findOneBy({ email });
@@ -28,7 +29,7 @@ export const createUser = async (req: Request, res: Response) => {
 };
 
 export const getUsers = async (req: Request, res: Response) => {
-    const userRepository = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     try {
         const users = await userRepository.find();
@@ -40,7 +41,7 @@ export const getUsers = async (req: Request, res: Response) => {
 
 export const getUser = async (req: Request, res: Response) => {
     const { email } = req.params;
-    const userRepository = AppDataSource.getRepository(User);
+    const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     try {
         const user = await userRepository.findOneBy({ email });
